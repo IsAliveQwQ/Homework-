@@ -1,0 +1,38 @@
+﻿using System;
+
+namespace Ch09_Homework2
+{
+    public class Box
+    {
+        private double width;
+        private double height;
+        private double length;
+
+        public Box(double width, double height, double length)
+        {
+            this.width = width;
+            this.height = height;
+            this.length = length;
+        }
+
+        public double Volume()
+            => length * width * height;
+
+        public double Area()
+            => 2 * (length * width + length * height + width * height);
+
+        public override string ToString()
+            => $"Box({length} × {width} × {height})";
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Box box = new Box(3, 4, 5);
+            Console.WriteLine(box);                          
+            Console.WriteLine($"體積  = {box.Volume():F2}");   
+            Console.WriteLine($"表面積 = {box.Area():F2}");    
+        }
+    }
+}
